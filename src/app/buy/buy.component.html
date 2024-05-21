@@ -1,0 +1,48 @@
+<div class="container mt-5 d-flex align-items-center justify-content-center h-100">
+    <div class="card border w-25 shadow m-5 p-4 d-flex align-items-center justify-content-center h-100">
+        <div class="mb-2">
+            <h3>{{saleType}}</h3>
+        </div>
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputAmount" class="form-label">Amount</label>
+                <input type="number" class="form-control" [(ngModel)]="amount" min="0" step="1" id="exampleInputPrice" name="price">
+            </div>
+            <div class="mb-3">
+                <label for="exampleSaleType" class="form-label">Buy Type</label>
+                <select class="form-select" aria-label="Default select example" (change)="onValue($event)" [(ngModel)]="buyType" name="buyType">
+                    <option value="0">ETH</option>  
+                    <option value="1">USDC</option>
+                </select>
+            </div>
+            <div>
+                <div *ngIf="buyType=='0'">
+                    <p> Amount to pay: {{payAmount}} ETH </p>
+                </div>
+                <div *ngIf="buyType=='1'">
+                    <p> Amount to pay: {{payAmount}} USDC </p>
+                </div>
+                <p>Tokens to receive: {{tokenAmt}}</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" (click)="buyToken()" class="btn button-color">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="card border w-25 shadow m-5 p-4 d-flex align-items-center justify-content-center h-25">
+        <div class="mb-2">
+            <h3>User Balance</h3>
+        </div>
+        <div class="mt-5 d-flex align-items-center justify-content-center h-100" *ngIf="isConnected">
+            <p>USDC Balance: {{usdcBal}}</p>
+        </div>
+        <div class="mt-5 d-flex align-items-center justify-content-center h-100" *ngIf="isConnected">
+            <p>Infinity Coin Balance: {{infinityBal}}</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5 d-flex align-items-center justify-content-center h-100">
+    
+</div>

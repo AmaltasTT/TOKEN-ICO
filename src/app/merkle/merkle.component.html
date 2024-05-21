@@ -1,0 +1,31 @@
+<div class="container mt-5 d-flex align-items-center justify-content-center h-100">
+    <div class="card border w-50 shadow m-5 p-4 d-flex align-items-center justify-content-center h-100">
+        <h2 class="fw-bold">Whitelist Users</h2>
+        <form [formGroup]="form">
+            <div formArrayName="addresses">
+                <div *ngFor="let address of addresses.controls; let i = index">
+                    <div [formGroupName]="i" class="form-group">
+                        <label class="mt-3 text-secondary" for="address{{i}}">Address {{i + 1}}</label>
+                        <div class="mt-2 d-flex gap-2">
+                            <div>
+                                <input type="text" class="form-control" id="address{{i}}" formControlName="address"
+                                    placeholder="Enter address" >
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-success add-remove-button" (click)="addAddressControl()">
+                                        <!-- <img src="assets/plus.svg" alt="plus-icon"> --> <strong class="fs-6">+</strong>
+                                     </button>
+                                     <button type="button" class="btn btn-danger add-remove-button mx-2" *ngIf="i>0"
+                                         (click)="removeAddressControl(i)"><strong class="fs-6">x</strong></button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-2">
+                <button type="button" (click)="whitelistUser()" class="btn button-color">Whitelist Users</button>
+            </div>
+        </form>
+    </div>
+</div>

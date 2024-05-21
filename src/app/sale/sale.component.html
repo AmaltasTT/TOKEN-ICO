@@ -1,0 +1,29 @@
+<div class="container d-flex justify-content-center">
+    <div class="card border w-25 shadow m-5 p-4 d-flex align-items-center justify-content-center h-100">
+            <form>
+                <div class="mb-3 ">
+                    <label for="starTime" class="form-label ">Start Time</label>
+                    <input type="datetime-local" class="form-control " name="startTime" [(ngModel)]="startTime" id="exampleInputTime" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="endTime" class="form-label ">End Time</label>
+                    <input type="datetime-local" class="form-control" name="endTime" [(ngModel)]="endTime" id="exampleInputTime" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label ">Sale Type</label>
+                <select class="form-select" aria-label="Default select example" name="saleType" [(ngModel)]="saleType">
+                    <option value="0" selected>Sale Not Active</option>
+                    <option value="1">Private Sale</option>
+                    <option value="2">Public Sale</option>
+                </select>
+                </div>
+                <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Token Price</label>
+                <input type="text" class="form-control " id="exampleInputPrice" name="price" [(ngModel)]="price">
+                </div>
+        
+                <div class="d-flex justify-content-center"><button type="submit" (click)="configSale()" class="btn button-color">Submit</button></div>
+            </form>
+    </div>
+    
+</div>
