@@ -6,10 +6,10 @@ Welcome to the Token-ICO Project! This repository contains all the necessary cod
 The Token-ICO Project aims to provide a comprehensive, secure, and easy-to-deploy solution for creating a new cryptocurrency token and managing its distribution through an ICO. This project is perfect for developers, and blockchain enthusiasts looking to fund their projects through token sales.
 
 ## Features
-ERC-20 Token Standard
-ICO Smart Contract
-Ownership and Access Control
-Whitelist Functionality
+ERC-20 Token Standard,
+ICO Smart Contract,
+Ownership and Access Control,
+Whitelist Functionality,
 Blacklist Functionality
 
 
